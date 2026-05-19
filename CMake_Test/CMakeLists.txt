@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.19)
+project(Test)
+set(libpath ${CMAKE_CURRENT_LIST_DIR}/lib)
+set(LIBRARY_OUTPUT_DIRECTORY ${libpath})
+add_subdirectory(common)
+add_subdirectory(modules)
+add_executable(test main.cpp)
+target_link_libraries(test PUBLIC M1 M2 Math)
